@@ -84,7 +84,7 @@ for more information.
 
 Used for connecting to the Stomp server.
 
-## Special Installation directions (for incorporation with versions of Laravel 5.3 or greater).
+## Special Installation (for incorporation with versions of Laravel 5.3 or greater).
 
 ### Current LTS (as of March 2019) is 5.5.
 
@@ -102,7 +102,7 @@ of the dependencies to allow for newer versions which are Laravel 5.5+ compatibl
 version 5.2.  But this updated dependency is simply much more flexible and future proof.
 
 
-## Mediacom Maestro installation of this fork:
+## Special installation directions for this fork:
 
 ### `Composer:`
 
