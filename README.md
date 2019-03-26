@@ -83,3 +83,47 @@ for more information.
 ### `username` and `password`
 
 Used for connecting to the Stomp server.
+
+## Mediacom Maestro port (for incorporation with versions of Laravel 5.3 or greater).
+
+### Current LTS (as of March 2019) is 5.5.
+
+This was copied and slightly modified from https://github.com/mayconbordin/l5-stomp-queue.  The reason for this is because a 
+couple of the dependencies are out of date for versions of Laravel beyond version 5.2.  Attempted Laravel upgrades beyond 5.2 using Composer 
+will result in critical error messages because of the obsolete versions of the sub dependencies 'mayconbordin/l5-stomp-queue' insists upon. 
+The current LTS version of Laravel is 5.5. The Maestro UI portion depends on Laravel 5.x.  Security has required that Maestro UI update its 
+Laravel version to a version which continues to have security support, which is the reason for the overall upgrade.
+
+Maestro UI, up until the Laravel 5.5 upgrade had listed the original 'mayconbordin/l5-stomp-queue' package from Github as a 
+dependency.  But its own internal dependencies had conflicts with even Laravel 5.3, nevermind 5.5. This is because of one of its own
+Symfony dependencies. The dependency, "symfony/process" and also its "phpunit/phpunit" dependency were both incompatible with 
+either the dependencies of the newer versions of Laravel or their respective dependencies.  The changes here simply updated certain
+of the dependencies to allow for newer versions which are Laravel 5.5+ compatible.  But this port IS still compatible with Laravel
+version 5.2.  But this updated dependency is simply much more flexible and future proof.
+
+
+## Mediacom Maestro installation of this fork:
+
+### `Composer:`
+
+Rather than merely being a standard dependency portion of the "require" and/or "require-dev" array(s), this can be installed using the repositories
+property of the composer.json object.  It will look like the following:
+
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/kschipul-mediacomcc/l5-stomp-queue.git"
+        }
+    ],
+    "require": {
+        ...,
+        "mayconbordin/l5-stomp-queue": "dev-master",
+    }
+
+
+After your composer.json is updated with the definitions in the above manner, you may then using the command line enter the following command:
+
+'composer update'
+
+
+This will update your project dependencies accordingly.
