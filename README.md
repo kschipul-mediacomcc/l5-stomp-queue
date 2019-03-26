@@ -84,7 +84,7 @@ for more information.
 
 Used for connecting to the Stomp server.
 
-## Mediacom Maestro port (for incorporation with versions of Laravel 5.3 or greater).
+## Special Installation directions (for incorporation with versions of Laravel 5.3 or greater).
 
 ### Current LTS (as of March 2019) is 5.5.
 
